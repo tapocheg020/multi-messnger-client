@@ -1,11 +1,10 @@
-import Main from '@/screens/dashboard/main/Main'
-import type { Metadata } from 'next'
+'use client'
+import dynamic from 'next/dynamic'
 
-export const metadata: Metadata = {
-	title: 'Main page',
-	description: 'Main page'
-}
+const Main = dynamic(() => import('@/screens/dashboard/main/Main'), {
+	ssr: false,
+})
 
 export default function Page() {
-	return <Main/>
+	return <Main />
 }

@@ -3,17 +3,22 @@
   height: 99dvh;
   background-color: var(--background);
   position: fixed;
-  top: 25px;
-  z-index: 10123123131000;
+  top: 26px;
+  z-index: 10000;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   box-shadow: 0 0px 100px rgba(0, 0, 0, 0.315);
   display: flex;
   flex-direction: column;
-  padding: 20px 0px;
-	overflow-y: scroll;
+  overflow-y: scroll;
   .heading {
-    padding: 0px 20px;
+		z-index: 100000;
+		position: sticky;
+		background-color: var(--background);
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		top: 0px;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,7 +30,6 @@
     }
   }
   .inputWrapper {
-    margin-top: 20px;
     padding: 0px 20px;
     .searchInput {
       > div {
@@ -70,8 +74,8 @@
       padding: 5px 20px;
     }
     .item {
-			filter: brightness(1);
-			transition: filter 0.3s ease;
+      filter: brightness(1);
+      transition: filter 0.3s ease;
       padding: 5px 20px;
       background-color: var(--altCreateBackgroundColor);
       display: flex;
@@ -93,9 +97,9 @@
         }
       }
     }
-		.item:active {
-			filter: brightness(1.5);
-		}
+    .item:active {
+      filter: brightness(1.5);
+    }
     .border {
       border-bottom: 2px solid var(--background);
     }

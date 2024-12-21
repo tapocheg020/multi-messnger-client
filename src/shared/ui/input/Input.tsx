@@ -15,18 +15,23 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
       pending,
       style,
       icon,
-			reverseColor,
-			className,
+      reverseColor,
+      className,
+      onFocus,
       ...rest
     },
     ref
   ) => {
     return (
       <div
-        className={clsx(styles.group, {
-          [styles.error]: error,
-          [styles.pending]: pending,
-        }, className)}
+        className={clsx(
+          styles.group,
+          {
+            [styles.error]: error,
+            [styles.pending]: pending,
+          },
+          className
+        )}
       >
         {type === "checkbox" ? (
           <div className={styles.switch}>
@@ -47,13 +52,14 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
           <input
             type={type}
             className={clsx(styles.input, {
-							[styles.reverse]: reverseColor
-						})}
+              [styles.reverse]: reverseColor,
+            })}
+            onFocus={onFocus}
             onChange={onChange}
             value={typeof value === "boolean" ? String(value) : value}
             placeholder={placeholder}
             disabled={pending}
-						style={style}
+            style={style}
             ref={ref}
             {...rest}
           />

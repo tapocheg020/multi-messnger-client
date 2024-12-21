@@ -1,7 +1,7 @@
 .mobilSideBar {
   height: 100%;
   width: 100%;
-  padding: 180px 0px 80px 0px;
+  padding: 0px 0px 80px 0px;
   background-color: var(--subBackground);
 
   .header {
@@ -58,6 +58,23 @@
         }
       }
     }
+    .inputWrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+			gap: 15px;
+      .cancel {
+				font-size: 20px;
+        cursor: pointer;
+				color: var(--accent);
+				filter: brightness(1);
+        transition: filter 0.3s ease;
+        &:active {
+					transform: scale(0.95);
+          filter: brightness(0.7);
+        }
+      }
+    }
     .searchInput {
       > div {
         color: var(--subForeground);
@@ -71,6 +88,7 @@
       padding-bottom: 8px;
 
       .folder {
+        position: relative;
         font-size: 15px;
         color: var(--subForeground);
         font-weight: 400;
@@ -87,6 +105,28 @@
         &.active {
           color: var(--accent);
           background-color: rgba(255, 255, 255, 0.1);
+        }
+        .remove {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 15px;
+          height: 15px;
+          position: absolute;
+          left: -1px;
+          top: 3px;
+          font-size: 8px;
+          background-color: var(--subBackground);
+          color: var(--foreground);
+          border-radius: 20px;
+          cursor: pointer;
+          transition: color 0.3s ease;
+          &:hover {
+            color: var(--accent);
+          }
+        }
+        &.editMode {
+          animation: editMode 1s infinite;
         }
       }
     }
@@ -138,5 +178,23 @@
 @media (min-width: 1000px) and (min-height: 550px) {
   .mobilSideBar {
     display: none;
+  }
+}
+
+@keyframes editMode {
+  0% {
+    transform: rotate(-1deg) translateX(-1px);
+  }
+  25% {
+    transform: rotate(1deg) translateX(1px);
+  }
+  50% {
+    transform: rotate(-1deg) translateX(-1px);
+  }
+  75% {
+    transform: rotate(1deg) translateX(1px);
+  }
+  100% {
+    transform: rotate(-1deg) translateX(-1px);
   }
 }

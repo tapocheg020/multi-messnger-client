@@ -1,0 +1,21 @@
+.main {
+	min-height: 99.9dvh;
+	display: flex;
+  width: 100%;
+  background-color: var(--subBackground);
+  padding: clamp(15px, 3vw, 30px);
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+	@media (max-width: 800px) {
+		border-radius: 0px;
+	}
+	.emptySelector {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@media (max-width: 1000px) or (max-height: 550px) {
+			display: none;
+		}
+	}
+}

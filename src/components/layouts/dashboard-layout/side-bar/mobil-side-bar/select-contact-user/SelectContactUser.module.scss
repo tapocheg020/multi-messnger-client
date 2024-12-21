@@ -1,0 +1,103 @@
+.select {
+  width: 100%;
+  height: 99dvh;
+  background-color: var(--background);
+  position: fixed;
+  top: 25px;
+  z-index: 10123123131000;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 0px 100px rgba(0, 0, 0, 0.315);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+	overflow-y: scroll;
+  .heading {
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-weight: 500;
+    .return {
+      cursor: pointer;
+      color: var(--accent);
+    }
+  }
+  .inputWrapper {
+    margin-top: 20px;
+    padding: 0px 20px;
+    .searchInput {
+      > div {
+        color: var(--subForeground);
+      }
+    }
+  }
+  .altCreate {
+    margin-top: 20px;
+    .altItem {
+      background-color: var(--altCreateBackgroundColor);
+      filter: brightness(1);
+      transition: filter 0.3s ease;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 2px solid var(--background);
+      .altIcon {
+        color: var(--accent);
+        font-size: 30px;
+      }
+      .altName {
+        color: var(--accent);
+        font-weight: 500;
+      }
+    }
+    .altItem:last-child {
+      border-bottom: none;
+    }
+    .altItem:active {
+      filter: brightness(1.5);
+    }
+  }
+  .items {
+    display: flex;
+    flex-direction: column;
+    .itemsHeading {
+      background-color: var(--background);
+      font-size: 17px;
+      font-weight: 500;
+      padding: 5px 20px;
+    }
+    .item {
+			filter: brightness(1);
+			transition: filter 0.3s ease;
+      padding: 5px 20px;
+      background-color: var(--altCreateBackgroundColor);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      .info {
+        padding: 2px 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        .name {
+          font-weight: 500;
+          color: var(--foreground);
+        }
+        .lastSeen {
+          font-size: 12px;
+          color: var(--subForeground);
+        }
+      }
+    }
+		.item:active {
+			filter: brightness(1.5);
+		}
+    .border {
+      border-bottom: 2px solid var(--background);
+    }
+  }
+}

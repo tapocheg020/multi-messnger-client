@@ -1,0 +1,142 @@
+.mobilSideBar {
+  height: 100%;
+  width: 100%;
+  padding: 180px 0px 80px 0px;
+  background-color: var(--subBackground);
+
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background-color: var(--background);
+    color: var(--foreground);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+
+      .edit {
+        color: var(--accent);
+        cursor: pointer;
+        font-weight: 500;
+        font-size: clamp(18px, 2vw, 22px);
+        transition: transform 0.2s ease, filter 0.3s ease;
+
+        &:hover {
+          filter: brightness(1.2);
+        }
+
+        &:active {
+          transform: scale(0.95);
+          filter: brightness(0.7);
+        }
+      }
+
+      .newChat {
+        font-size: 20px;
+        color: var(--accent);
+        cursor: pointer;
+        transition: transform 0.2s ease, filter 0.3s ease;
+
+        &:hover {
+          filter: brightness(1.2);
+        }
+
+        &:active {
+          transform: scale(0.95);
+          filter: brightness(0.7);
+        }
+      }
+    }
+    .searchInput {
+      > div {
+        color: var(--subForeground);
+      }
+    }
+    .folders {
+      margin-top: 8px;
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+
+      .folder {
+        font-size: 15px;
+        color: var(--subForeground);
+        font-weight: 400;
+        padding: 6px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        font-weight: 500;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        &.active {
+          color: var(--accent);
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+
+  .footer {
+    width: 100%;
+    padding: 10px 40px;
+    position: fixed;
+    bottom: 0px;
+    z-index: 10000;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-size: 14px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    .footerItem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      cursor: pointer;
+      transition: filter 0.3s ease;
+      &:active {
+        filter: brightness(0.7);
+      }
+      &.active {
+        .footerIcon {
+          color: var(--accent);
+        }
+        .footerText {
+          color: var(--accent);
+        }
+      }
+      .footerIcon {
+        font-size: 28px;
+        color: var(--subForeground);
+      }
+      .footerText {
+        color: var(--subForeground);
+        font-weight: 400;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) and (min-height: 550px) {
+  .mobilSideBar {
+    display: none;
+  }
+}
